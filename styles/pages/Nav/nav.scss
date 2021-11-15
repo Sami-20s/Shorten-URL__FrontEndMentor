@@ -1,0 +1,161 @@
+@import "../../helper/mixins/mixins";
+.navbar {
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px 0;
+        .logo {
+            justify-self: start;
+            flex: 2;
+        }
+        &__burger {
+            justify-self: flex-end;
+            width: 25px;
+            cursor: pointer;
+            & > div {
+                width: 100%;
+                height: 4px;
+                background-color: var(--grayish-violet);
+                transition: var(--tra);
+                transform-origin: left;
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+            }
+            &.active {
+                & > div:first-child {
+                    transform: rotate(45deg);
+                }
+                & > div:last-child {
+                    transform: rotate(-45deg);
+                }
+                & > div:nth-child(2) {
+                    opacity: 0;
+                }
+            }
+        }
+        &__linksButtons {
+            display: flex;
+            flex: 9;
+            justify-content: space-between;
+            align-items: center;
+            @include breakpoint-down("meduim") {
+                display: none;
+            }
+
+            &.active {
+                display: flex;
+                position: fixed;
+                flex: unset;
+                width: 86vw;
+                max-width: 366px;
+                top: 113px;
+                right: 25px;
+                flex-direction: column;
+                padding: 50px 0;
+                background-color: var(--dark-violet);
+                justify-content: center;
+                border-radius: 10px;
+                transition: var(--tra);
+                animation: boxAnimation 0.3s ease-out both;
+                .navbar__wrapper__links {
+                    ul {
+                        flex-direction: column;
+                        align-items: center;
+                        color: white;
+                        li {
+                            margin-bottom: 35px;
+                            &:last-child {
+                                margin-bottom: 65px;
+                            }
+                            &:hover {
+                                color: white;
+                                opacity: 0.5;
+                            }
+                            &:not(:last-child) {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+                .navbar__wrapper__buttons {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80%;
+                    > button {
+                        color: white;
+                        font-weight: 500;
+                        width: 100%;
+                        &:first-child {
+                            position: relative;
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                display: block;
+                                width: 100%;
+                                height: 1px;
+                                background-color: var(--gray);
+                                top: 0;
+                                transform: translateY(-30px);
+                            }
+                        }
+                        &:not(:last-child) {
+                            margin-bottom: 35px;
+                        }
+                    }
+                }
+            }
+            .navbar__wrapper__links {
+                font-size: 1rem;
+                color: var(--grayish-violet);
+                ul {
+                    display: flex;
+                    li {
+                        transition: var(--tra);
+                        &:hover {
+                            color: var(--very-dark-blue);
+                        }
+                        &:not(:last-child) {
+                            margin-right: 30px;
+                        }
+                    }
+                }
+            }
+            .navbar__wrapper__buttons {
+                > button {
+                    width: 105px;
+                    height: 40px;
+                    transition: var(--tra);
+                    outline: none;
+                    border-radius: 30px;
+                    border: none;
+                    font-weight: 700;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    background-color: transparent;
+                    color: var(--grayish-violet);
+                    transition: var(--tra);
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+                > button:last-child {
+                    background-color: var(--cyan);
+                    border: solid 2px var(--dark-cyan);
+                    color: white;
+                }
+            }
+        }
+    }
+}
+@keyframes boxAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
