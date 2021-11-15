@@ -1,0 +1,30 @@
+@mixin par($s, $w, $c) {
+    font-size: $s;
+    font-weight: $w;
+    color: $c;
+}
+
+// 640px , 1024px , 1400px
+$breakpoint-up: (
+    "meduim": "40em",
+    "large": "64em",
+    "xlarge": "87.5em",
+);
+// 639px , 1023px , 1399px
+$breakpoint-down: (
+    "small": "39.937em",
+    "meduim": "63.937em",
+    "large": "87.437em",
+);
+
+@mixin breakpoint-up($size) {
+    @media (min-width: map-get($breakpoint-up,$size )) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size) {
+    @media (max-width: map-get($breakpoint-down,$size )) {
+        @content;
+    }
+}
