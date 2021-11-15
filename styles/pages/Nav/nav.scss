@@ -43,7 +43,50 @@
             @include breakpoint-down("meduim") {
                 display: none;
             }
-
+            .navbar__wrapper__links {
+                font-size: 1rem;
+                color: var(--grayish-violet);
+                ul {
+                    display: flex;
+                    li {
+                        a {
+                            font-weight: 500;
+                        }
+                        transition: var(--tra);
+                        &:hover {
+                            color: var(--very-dark-blue);
+                        }
+                        &:not(:last-child) {
+                            margin-right: 30px;
+                        }
+                    }
+                }
+            }
+            .navbar__wrapper__buttons {
+                > button {
+                    width: 105px;
+                    height: 40px;
+                    transition: var(--tra);
+                    outline: none;
+                    border-radius: 30px;
+                    border: none;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    background-color: transparent;
+                    color: var(--grayish-violet);
+                    transition: var(--tra);
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+                > button:last-child {
+                    background-color: var(--cyan);
+                    border: solid 2px var(--dark-cyan);
+                    color: white;
+                }
+            }
+            // ! Acitve State For Mobile Burger
             &.active {
                 display: flex;
                 position: fixed;
@@ -87,7 +130,6 @@
                     width: 80%;
                     > button {
                         color: white;
-                        font-weight: 500;
                         width: 100%;
                         &:first-child {
                             position: relative;
@@ -106,46 +148,6 @@
                             margin-bottom: 35px;
                         }
                     }
-                }
-            }
-            .navbar__wrapper__links {
-                font-size: 1rem;
-                color: var(--grayish-violet);
-                ul {
-                    display: flex;
-                    li {
-                        transition: var(--tra);
-                        &:hover {
-                            color: var(--very-dark-blue);
-                        }
-                        &:not(:last-child) {
-                            margin-right: 30px;
-                        }
-                    }
-                }
-            }
-            .navbar__wrapper__buttons {
-                > button {
-                    width: 105px;
-                    height: 40px;
-                    transition: var(--tra);
-                    outline: none;
-                    border-radius: 30px;
-                    border: none;
-                    font-weight: 700;
-                    font-size: 1rem;
-                    cursor: pointer;
-                    background-color: transparent;
-                    color: var(--grayish-violet);
-                    transition: var(--tra);
-                    &:hover {
-                        opacity: 0.5;
-                    }
-                }
-                > button:last-child {
-                    background-color: var(--cyan);
-                    border: solid 2px var(--dark-cyan);
-                    color: white;
                 }
             }
         }
