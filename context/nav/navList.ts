@@ -1,6 +1,6 @@
-import { NavLinksTypes } from "../../types/Nav/navTypes";
+import { NavLinksListTypes } from "../../types/Nav/navTypes";
 
-const navLinks: NavLinksTypes = [
+const navLinks: NavLinksListTypes = [
     {
         id: 1,
         text: "Features",
@@ -14,7 +14,7 @@ const navLinks: NavLinksTypes = [
         text: "Resources",
     },
 ];
-const navButtons: NavLinksTypes = [
+const navButtons: NavLinksListTypes = [
     {
         id: 1,
         text: "Login",
