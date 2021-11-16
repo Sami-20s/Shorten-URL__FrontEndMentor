@@ -102,22 +102,61 @@
                 border-radius: 10px;
                 transition: var(--tra);
                 animation: boxAnimation 0.3s ease-out both;
+                // For Large Screen
+                @include breakpoint-up("large") {
+                    position: relative;
+                    flex: 9;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: unset;
+                    max-width: unset;
+                    top: unset;
+                    right: unset;
+                    flex-direction: row;
+                    padding: 0;
+                    background-color: transparent;
+                    border-radius: 0;
+                    animation: unset;
+                }
                 .navbar__wrapper__links {
                     ul {
                         flex-direction: column;
                         align-items: center;
                         color: white;
+                        // For Large Screen
+                        @include breakpoint-up("large") {
+                            flex-direction: row;
+                            align-items: unset;
+                            color: var(--grayish-violet);
+                        }
                         li {
                             margin-bottom: 35px;
+                            // For Large Screen
+                            @include breakpoint-up("large") {
+                                margin-bottom: 0;
+                            }
                             &:last-child {
                                 margin-bottom: 65px;
+                                // For Large Screen
+                                @include breakpoint-up("large") {
+                                    margin-bottom: 0;
+                                }
                             }
                             &:hover {
                                 color: white;
                                 opacity: 0.5;
+                                // For Large Screen
+                                @include breakpoint-up("large") {
+                                    opacity: 1;
+                                    color: var(--very-dark-blue);
+                                }
                             }
                             &:not(:last-child) {
                                 margin-right: 0;
+                                // For Large Screen
+                                @include breakpoint-up("large") {
+                                    margin-right: 30px;
+                                }
                             }
                         }
                     }
@@ -128,9 +167,21 @@
                     justify-content: center;
                     align-items: center;
                     width: 80%;
+                    // For Large Screen
+                    @include breakpoint-up("large") {
+                        display: block;
+                        flex-direction: row;
+                        justify-content: unset;
+                        align-items: unset;
+                        width: unset;
+                    }
                     > button {
                         color: white;
                         width: 100%;
+                        @include breakpoint-up("large") {
+                            width: 105px;
+                            color: var(--grayish-violet);
+                        }
                         &:first-child {
                             position: relative;
                             &::after {
@@ -142,10 +193,21 @@
                                 background-color: var(--gray);
                                 top: 0;
                                 transform: translateY(-30px);
+                                @include breakpoint-up("large") {
+                                    display: none;
+                                }
+                            }
+                        }
+                        &:last-child {
+                            @include breakpoint-up("large") {
+                                color: white;
                             }
                         }
                         &:not(:last-child) {
                             margin-bottom: 35px;
+                            @include breakpoint-up("large") {
+                                margin-bottom: 0;
+                            }
                         }
                     }
                 }
