@@ -88,6 +88,7 @@
             }
             // ! Acitve State For Mobile Burger
             &.active {
+                z-index: 100;
                 display: flex;
                 position: fixed;
                 flex: unset;
