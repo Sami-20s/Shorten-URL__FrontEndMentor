@@ -1,11 +1,11 @@
 .hero {
     position: relative;
     width: 100%;
-    overflow-x: hidden;
     @include breakpoint-up("large") {
         margin-top: 40px;
     }
     &__wrapper {
+        overflow-x: hidden;
         position: relative;
         display: flex;
         flex-direction: column;
