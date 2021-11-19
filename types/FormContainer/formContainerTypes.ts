@@ -15,6 +15,7 @@ export type FormProps = {
     setLink: React.Dispatch<React.SetStateAction<string>>;
     danger: boolean;
     handleClick: FunctionTypes["handleClick"];
+    isLoading: boolean;
 };
 
 export type SingleLinkBoxProps = {
