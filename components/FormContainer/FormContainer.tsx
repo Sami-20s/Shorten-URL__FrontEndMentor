@@ -45,10 +45,10 @@ const FormContainer = () => {
             setDanger(true);
             setTimeout(() => {
                 setDanger(false);
-                setIsLoading(false);
             }, 2000);
+        } else {
+            setIsLoading(true);
         }
-        setIsLoading(true);
         fetchData(link.toString());
         setLink("");
     };
