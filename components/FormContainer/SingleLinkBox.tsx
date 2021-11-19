@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import {
     FunctionTypes,
     SingleLinkBoxProps,
-} from "../../types/FormContainer/formContainer";
+} from "../../types/FormContainer/formContainerTypes";
 
 const SingleLinkBox: FC<SingleLinkBoxProps> = ({ link }) => {
     const [copied, setCopied] = useState<boolean>(false);

@@ -5,13 +5,14 @@ import {
     LinksTypes,
     DangerTypes,
     SingleLinkBoxProps,
-} from "../../types/FormContainer/formContainer";
+} from "../../types/FormContainer/formContainerTypes";
 import Form from "./Form";
 import SingleLinkBox from "./SingleLinkBox";
 const FormContainer = () => {
     const [link, setLink] = useState<LinkTypes>("");
     const [danger, setDanger] = useState<DangerTypes>(false);
     const [links, setLinks] = useState<LinksTypes>([]);
+    const [isLoading, setIsLoading] = useState<DangerTypes>(false);
 
     const fetchData: FunctionTypes["fetchData"] = async URL => {
         try {
@@ -19,7 +20,7 @@ const FormContainer = () => {
                 `https://api.shrtco.de/v2/shorten?url=${URL}`
             );
             const data = await response.json();
-            console.log(data);
+            setIsLoading(false);
             if (data.ok === false) {
                 setDanger(true);
                 setTimeout(() => {
@@ -44,8 +45,10 @@ const FormContainer = () => {
             setDanger(true);
             setTimeout(() => {
                 setDanger(false);
+                setIsLoading(false);
             }, 2000);
         }
+        setIsLoading(true);
         fetchData(link.toString());
         setLink("");
     };
@@ -57,6 +60,7 @@ const FormContainer = () => {
                     setLink={setLink}
                     danger={danger}
                     handleClick={handleClick}
+                    isLoading={isLoading}
                 />
                 {links.map((item, index) => {
                     return <SingleLinkBox key={index} link={item} />;

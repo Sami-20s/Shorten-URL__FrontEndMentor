@@ -1,7 +1,14 @@
-import React, { FC } from "react";
-import { FormProps } from "../../types/FormContainer/formContainer";
+import React, { FC, useState } from "react";
+import { FormProps } from "../../types/FormContainer/formContainerTypes";
 
-const Form: FC<FormProps> = ({ link, setLink, danger, handleClick }) => {
+const Form: FC<FormProps> = ({
+    link,
+    setLink,
+    danger,
+    handleClick,
+    isLoading,
+}) => {
+    const [sami, setSami] = useState();
     return (
         <form className="input__wrapper__form">
             <div className="input__wrapper__form__control">
@@ -20,7 +27,7 @@ const Form: FC<FormProps> = ({ link, setLink, danger, handleClick }) => {
                     type="submit"
                     onClick={e => handleClick(e)}
                 >
-                    Shorten It!
+                    {isLoading ? "Loading..." : "Shorten It!"}
                 </button>
             </div>
         </form>
