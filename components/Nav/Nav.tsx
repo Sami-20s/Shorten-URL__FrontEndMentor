@@ -7,6 +7,9 @@ import NavLinks from "./NavLinks";
 const Nav = () => {
     const { Logo, navLinks, navButtons } = useGlobal();
     const [isClicked, setIsClicked] = useState(false);
+    isClicked
+        ? (document.body.style.overflowY = "hidden")
+        : (document.body.style.overflowY = "scroll");
     return (
         <nav className="navbar container-px" id="navbar">
             <div className="navbar__wrapper ">
