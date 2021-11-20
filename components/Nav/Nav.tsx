@@ -8,8 +8,12 @@ const Nav = () => {
     const { Logo, navLinks, navButtons } = useGlobal();
     const [isClicked, setIsClicked] = useState(false);
     isClicked
-        ? (document.body.style.overflowY = "hidden")
-        : (document.body.style.overflowY = "scroll");
+        ? setTimeout(() => {
+              document.body.style.overflowY = "hidden";
+          }, 0)
+        : setTimeout(() => {
+              document.body.style.overflowY = "scroll";
+          }, 0);
     return (
         <nav className="navbar container-px" id="navbar">
             <div className="navbar__wrapper ">
