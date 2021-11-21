@@ -1,0 +1,132 @@
+.statistics {
+    background-color: var(--gray-body);
+    padding-top: 20px;
+    padding-bottom: 80px;
+    &__wrapper {
+        &__text {
+            text-align: center;
+            margin-bottom: 100px;
+            > h2 {
+                font-size: 1.9rem;
+                font-weight: 700;
+                color: var(--very-dark-blue);
+                margin-bottom: 25px;
+                // Laptop Screen
+                @include breakpoint-up("large") {
+                    font-size: 2.5rem;
+                }
+            }
+            > p {
+                font-size: 1.1rem;
+                color: var(--grayish-violet);
+                font-weight: 500;
+                line-height: 1.7;
+                // Laptop Screen
+                @include breakpoint-up("large") {
+                    margin: auto;
+                    font-size: 1.3rem;
+                    max-width: 600px;
+                }
+            }
+        }
+        &__features {
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            gap: 90px;
+            // Laptop Screen
+            @include breakpoint-up("large") {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+                min-height: 400px;
+            }
+
+            &__single {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                // border: solid 1px #e0e0e0;
+                width: 100%;
+                max-width: 500px;
+                padding: 0 35px 40px;
+                border-radius: 8px;
+                background-color: #fff;
+                text-align: center;
+                cursor: pointer;
+                // Laptop Screen
+                @include breakpoint-up("large") {
+                    align-items: flex-start;
+                    &:first-child {
+                        align-self: flex-start;
+                    }
+                    &:nth-child(2) {
+                        align-self: center;
+                    }
+                    &:last-child {
+                        align-self: flex-end;
+                    }
+                }
+                &:not(:last-child)::after {
+                    content: "";
+                    position: absolute;
+                    width: 8px;
+                    height: 50px;
+                    bottom: -50px;
+                    background-color: var(--cyan);
+                    // Laptop Screen
+                    @include breakpoint-up("large") {
+                        width: 30px;
+                        height: 8px;
+                        right: -30px;
+                        bottom: 160px;
+                    }
+                }
+                // Laptop Screen
+                &:first-child::after {
+                    @include breakpoint-up("large") {
+                        bottom: 100px;
+                    }
+                }
+                &:hover &__img {
+                    transform: scale(1.1) translateY(-50%);
+                }
+                &__img {
+                    width: 85px;
+                    height: 85px;
+                    border-radius: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: var(--dark-violet);
+                    transform: translateY(-50%);
+                    transition: var(--tra);
+                }
+                &__text {
+                    margin-top: -10px;
+                    text-align: center;
+                    // Laptop Screen
+                    @include breakpoint-up("large") {
+                        text-align: left;
+                    }
+
+                    > h3 {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        margin-bottom: 20px;
+                        color: var(--very-dark-blue);
+                    }
+                    > p {
+                        font-size: 0.96rem;
+                        font-weight: 500;
+                        line-height: 1.7;
+                        color: var(--grayish-violet);
+                    }
+                }
+            }
+        }
+    }
+}
