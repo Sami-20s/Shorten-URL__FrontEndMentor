@@ -1,0 +1,35 @@
+.boost {
+    background-image: url("/img/bg-boost-mobile.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-color: var(--dark-violet);
+    // Laptop Screen
+    @include breakpoint-up("large") {
+        background-image: url("/img/bg-boost-desktop.svg");
+        background-size: 180%;
+        background-position: center center;
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 90px;
+        padding-bottom: 90px;
+        > h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 25px;
+            // Laptop Screen
+            @include breakpoint-up("large") {
+                font-size: 2.5rem;
+            }
+        }
+        &__buttons {
+            background-color: white;
+            border-radius: 40px;
+        }
+    }
+}
