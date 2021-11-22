@@ -2,6 +2,10 @@
     background-color: var(--gray-body);
     padding-top: 20px;
     padding-bottom: 80px;
+    // Laptop Screen
+    @include breakpoint-up("large") {
+        padding-bottom: 120px;
+    }
     &__wrapper {
         &__text {
             text-align: center;
@@ -57,7 +61,7 @@
                 background-color: #fff;
                 text-align: center;
                 cursor: pointer;
-                outline:none;
+                outline: none;
                 // Laptop Screen
                 @include breakpoint-up("large") {
                     align-items: flex-start;
