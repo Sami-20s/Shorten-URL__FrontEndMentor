@@ -80,11 +80,10 @@
             .icon {
                 display: block;
                 color: #fff;
-                font-size: 1.75rem;
+                font-size: 1.875rem;
                 transition: var(--tra);
                 // Laptop Screen
                 @include breakpoint-up("large") {
-                    font-size: 1.75rem;
                     cursor: pointer;
                 }
                 &:hover {
