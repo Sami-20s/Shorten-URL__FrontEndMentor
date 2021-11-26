@@ -1,0 +1,100 @@
+@import "../../helper/mixins/mixins";
+.footer {
+    background-color: var(--very-dark-violet);
+    &__wrapper {
+        padding: 50px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        // Laptop Screen
+        @include breakpoint-up("large") {
+            padding: 80px 0;
+            text-align: left;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .logo {
+            path {
+                fill: #fff;
+            }
+        }
+        &__links {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            // Laptop Screen
+            @include breakpoint-up("large") {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: unset;
+            }
+            h4 {
+                font-size: 1.0625rem;
+                color: #fff;
+                margin-bottom: 20px;
+                margin-top: 30px;
+                font-weight: 700;
+                // Laptop Screen
+                @include breakpoint-up("large") {
+                    margin-top: 0;
+                }
+            }
+            > div {
+                // Laptop Screen
+                @include breakpoint-up("large") {
+                    &:not(:last-child) {
+                        margin-right: 70px;
+                    }
+                }
+            }
+            ul {
+                li {
+                    color: var(--grayish-violet);
+                    font-size: 1rem;
+                    font-weight: 500;
+                    transition: var(--tra);
+                    // Laptop Screen
+                    @include breakpoint-up("large") {
+                        cursor: pointer;
+                    }
+                    &:hover {
+                        color: var(--cyan);
+                    }
+                    &:not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+        &__icons {
+            display: flex;
+            margin-top: 30px;
+            // Laptop Screen
+            @include breakpoint-up("large") {
+                margin-top: 0;
+            }
+            .icon {
+                display: block;
+                color: #fff;
+                font-size: 1.75rem;
+                transition: var(--tra);
+                // Laptop Screen
+                @include breakpoint-up("large") {
+                    font-size: 1.75rem;
+                    cursor: pointer;
+                }
+                &:hover {
+                    color: var(--cyan);
+                }
+
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
