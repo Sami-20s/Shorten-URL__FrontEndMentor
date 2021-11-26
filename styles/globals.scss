@@ -88,11 +88,12 @@ ul li {
     color: white;
     margin: auto;
     transition: var(--tra);
-    cursor: pointer;
     &:hover {
         opacity: 0.5;
     }
+    // Laptop Screen
     @include breakpoint-up("large") {
         margin: 0;
+        cursor: pointer;
     }
 }

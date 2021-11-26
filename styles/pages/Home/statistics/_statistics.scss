@@ -60,11 +60,11 @@
                 border-radius: 8px;
                 background-color: #fff;
                 text-align: center;
-                cursor: pointer;
                 outline: none;
                 // Laptop Screen
                 @include breakpoint-up("large") {
                     align-items: flex-start;
+                    cursor: pointer;
                     &:first-child {
                         align-self: flex-start;
                     }

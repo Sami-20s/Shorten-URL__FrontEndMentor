@@ -95,8 +95,11 @@
                     color: white;
                     border-radius: 8px;
                     background-color: var(--cyan);
-                    cursor: pointer;
                     transition: var(--tra);
+                    // Laptop Screen
+                    @include breakpoint-up("large") {
+                        cursor: pointer;
+                    }
                     &:hover,
                     &:active {
                         opacity: 0.5;
@@ -166,7 +169,10 @@
                 color: white;
                 background-color: var(--cyan);
                 transition: var(--tra);
-                cursor: pointer;
+                // Laptop Screen
+                @include breakpoint-up("large") {
+                    cursor: pointer;
+                }
                 &.active {
                     background-color: var(--dark-violet);
                     border-color: var(--dark-violet);
